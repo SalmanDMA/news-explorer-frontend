@@ -12,7 +12,7 @@ const handleAPIError = (error) => {
 
 export const registerUser = async (email, password, name) => {
  try {
-  const response = await fetch('http://localhost:3000/signup', {
+  const response = await fetch(`${BASE_URL}/signup`, {
    method: 'POST',
    headers,
    body: JSON.stringify({ email, password, name }),
@@ -32,7 +32,7 @@ export const registerUser = async (email, password, name) => {
 
 export const loginUser = async (email, password) => {
  try {
-  const response = await fetch('http://localhost:3000/signin', {
+  const response = await fetch(`${BASE_URL}/signin`, {
    method: 'POST',
    headers,
    body: JSON.stringify({ email, password }),
@@ -52,7 +52,7 @@ export const loginUser = async (email, password) => {
 
 export const getCurrentUser = async (token) => {
  try {
-  const response = await fetch('http://localhost:3000/users/me', {
+  const response = await fetch(`${BASE_URL}/users/me`, {
    headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,

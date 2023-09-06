@@ -9,7 +9,7 @@ const getToken = () => localStorage.getItem('jwt');
 
 export const getAllArticles = async () => {
  try {
-  const response = await fetch('http://localhost:3000/articles', {
+  const response = await fetch(`${BASE_URL}/articles`, {
    headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${getToken()}`,
@@ -27,7 +27,7 @@ export const getAllArticles = async () => {
 
 export const createArticle = async (article) => {
  try {
-  const response = await fetch('http://localhost:3000/articles', {
+  const response = await fetch(`${BASE_URL}/articles`, {
    method: 'POST',
    headers: {
     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export const createArticle = async (article) => {
 
 export const deleteArticle = async (id) => {
  try {
-  const response = await fetch(`http://localhost:3000/articles/${id}`, {
+  const response = await fetch(`${BASE_URL}/articles/${id}`, {
    method: 'DELETE',
    headers: {
     'Content-Type': 'application/json',
