@@ -3,7 +3,6 @@ import PopupWithForm from './PopupWithForm';
 import { useState } from 'react';
 import PopupSignup from './PopupSignup';
 import { loginUser } from '../../utils/MyAuth';
-import PopupSignupSuccess from './PopupSignupSuccess';
 import PopupSigninSuccsess from './PopupSigninSuccess';
 
 const PopupSignin = ({ handleAuth, title }) => {

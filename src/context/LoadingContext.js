@@ -13,5 +13,5 @@ export const LoadingProvider = ({ children }) => {
   setLoading((prevLoading) => !prevLoading);
  };
 
- return <LoadingContext.Provider value={{ loading, toggleLoading, setLoading }}>{children}</LoadingContext.Provider>;
+ return <LoadingContext.Provider value={{ loading, toggleLoading }}>{children}</LoadingContext.Provider>;
 };
