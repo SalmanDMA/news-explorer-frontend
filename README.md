@@ -1,43 +1,22 @@
-# News Explorer Backend
+# News Explorer App
 
-The News Explorer Backend is the server-side component of the News Explorer application. It provides the API endpoints and database management for the application. Below are the details and instructions for setting up and deploying the backend.
+The News Explorer App is an application that allows users to search for the latest news, save their favorite articles, and manage the saved articles. This application is built using Create React App (CRA) with the BEM methodology for styling.
 
-## Getting Started
+The app has several key features, including:
 
-To get started with the News Explorer Backend, follow these steps:
+## Key Features
 
-1. Clone this repository to your local machine:
-   `git clone <repository-url>`
+### Authentication and Authorization
 
-2. Navigate to the project directory:
-   `cd news-explorer-backend`
+The app includes an authentication system that allows users to sign up, log in, and log out. Once logged in, users have access to the article saving feature and can manage their saved articles.
 
-3. Install the required dependencies:
-   `npm install`
+### Article Saving
 
-4. Configure the environment variables:
+Users can save their favorite articles by clicking the bookmark icon from the search results. Once an article is saved, users can see the number of saved articles and remove them if desired.
 
-Create a `.env` file in the project root and set the necessary environment variables, including database connection details and any other required configurations.
+### Saved Article Categories
 
-5. Start the server:
-
-You can start the server using one of the following commands:
-
-- `npm start`: Start the server in production mode.
-- `npm run dev`: Start the server using Nodemon for automatic reloading during development.
-
-6. The server will start and be accessible at `http://localhost:3000`. You can now interact with the backend API.
-
-## API Endpoints
-
-The News Explorer Backend provides the following API endpoints:
-
-- `GET /articles`: Retrieve a list of articles.
-- `GET /articles/:articleId`: Retrieve a specific article by ID.
-- `POST /articles`: Create a new article.
-- `DELETE /articles/:articleId`: Delete a specific article by ID.
-- `POST /signup`: Register a new user.
-- `POST /signin`: Log in an existing user.
+Users can view saved articles categorized by topic. This makes it easy for users to manage and find saved articles.
 
 ### Server Access
 
@@ -46,6 +25,35 @@ The application is deployed to a server with the following links:
 - Front-end: [https://news-explorer.twilightparadox.com/](https://news-explorer.twilightparadox.com/)
 - Back-end API: [https://api.news-explorer.twilightparadox.com/](https://api.news-explorer.twilightparadox.com/)
 
-You can check the frontend GitHub repository for News Explorer at the following link: [News Explorer Frontend](https://github.com/SalmanDMA/news-explorer-frontend)
+## How to Use the App
 
-Happy coding !!!
+1. Open the application through the link [https://news-explorer.twilightparadox.com/](https://news-explorer.twilightparadox.com/).
+
+2. If you already have an account, log in with your credentials. If not, you can register to create a new account.
+
+3. After logging in, you can start searching for news articles using the search feature.
+
+4. To save an article, click the bookmark icon. The article will be saved in the list of saved articles.
+
+5. To view saved articles, click on the "Saved Articles" page, where you can see saved articles categorized by topic. You can also delete unwanted articles.
+
+6. When you're finished, you can log out of your account.
+
+## App Development
+
+This application was developed using the following technologies:
+
+- [Create React App (CRA)](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) for creating the React application.
+- The [BEM (Block Element Modifier)](http://getbem.com/introduction/) methodology was used for styling.
+
+## Installation and Local Usage
+
+If you want to run this application locally, you can follow these steps:
+
+1. Clone this repository to your computer.
+2. Open the terminal and navigate to the project directory.
+3. Run the command `npm install` to install all dependencies.
+4. Run the command `npm start` to start the application locally.
+5. Access the app via `http://localhost:3000` in your browser.
+
+Thank you for using the News Explorer App!
