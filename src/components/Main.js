@@ -1,14 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDataSearchContext } from '../context/DataSearchContext';
 import { useUserContext } from '../context/DataUserContext';
 import About from './About';
 import NewsCardList from './Card/NewsCardList';
 import Hero from './Hero';
 import { createArticle, deleteArticle, getAllArticles } from '../utils/MyApi';
+import { useLoadingContext } from '../context/LoadingContext';
+import Preloader from './Preloader';
 
 const Main = () => {
  const { dataHasilSearch } = useDataSearchContext();
+ const { loading } = useLoadingContext();
  const { savedArticles, setSavedArticles } = useUserContext();
+
+ console.log('dataHasilSearch:', dataHasilSearch);
 
  useEffect(() => {
   const fetchData = async () => {
@@ -22,7 +27,6 @@ const Main = () => {
 
   fetchData();
  }, []);
-
 
  const toggleSaveArticle = async (article) => {
   const {
@@ -55,10 +59,10 @@ const Main = () => {
     setSavedArticles(updatedSavedArticles);
    } else {
     // Jika sudah ada, hapus dari daftar simpanan
-     await deleteArticle(savedArticles[index]._id);
+    await deleteArticle(savedArticles[index]._id);
 
     // Update savedArticles dengan data terbaru dari database
-    const updatedSavedArticles = savedArticles.filter((article) => article._id !==  savedArticles[index]._id);
+    const updatedSavedArticles = savedArticles.filter((article) => article._id !== savedArticles[index]._id);
     console.log('updatedSavedArticles:', updatedSavedArticles);
     setSavedArticles(updatedSavedArticles); // Update state lokal
    }
@@ -69,6 +73,7 @@ const Main = () => {
  return (
   <>
    <Hero />
+   {loading && <Preloader />}
    {dataHasilSearch && <NewsCardList savedArticles={savedArticles} toggleSaveArticle={toggleSaveArticle} />}
    <About />
   </>

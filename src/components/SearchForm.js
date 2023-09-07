@@ -6,7 +6,7 @@ import { useDataSearchContext } from '../context/DataSearchContext';
 const SearchForm = () => {
  const [search, setSearch] = useState('');
  const [errors, setErrors] = useState('');
- const { toggleLoading } = useLoadingContext();
+ const { loading, toggleLoading } = useLoadingContext();
  const { setDataSearch } = useDataSearchContext();
 
  const determineCategory = (searchTerm) => {
@@ -22,6 +22,8 @@ const SearchForm = () => {
   }
 
   toggleLoading();
+
+  console.log('loading: ', loading);
 
   try {
    const response = await fetchNews(search);
