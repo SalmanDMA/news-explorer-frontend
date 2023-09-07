@@ -6,6 +6,7 @@ import Saved from './pages/Saved';
 import { LoadingProvider } from './context/LoadingContext';
 import { DataSearchProvider } from './context/DataSearchContext';
 import { UserProvider } from './context/DataUserContext';
+import ProtectedRoute from './components/PotectedRoute';
 
 const { home, savedNews, notFound } = linkData;
 
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
  },
  {
   path: savedNews,
-  element: <Saved />,
+  element: (
+   <ProtectedRoute>
+    <Saved />
+   </ProtectedRoute>
+  ),
  },
  {
   path: notFound,

@@ -28,7 +28,7 @@ const Saved = () => {
   <Layout type='saved'>
    <SavedNewsHeader />
    {savedArticles.length !== 0 && (
-     <div className='card-list'>
+    <div className='card-list'>
      <div className='card-list__wrapper-saved'>
       {savedArticles.map((data) => (
        <SavedNews key={data._id} image={data.image} date={data.date} title={data.title} description={data.text} category={data.keyword} author={data.source} handleRemoveClick={handleRemoveClick} />

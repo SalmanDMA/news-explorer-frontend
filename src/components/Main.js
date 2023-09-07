@@ -12,8 +12,7 @@ const Main = () => {
  const { dataHasilSearch } = useDataSearchContext();
  const { loading } = useLoadingContext();
  const { savedArticles, setSavedArticles } = useUserContext();
-
- console.log('dataHasilSearch:', dataHasilSearch);
+ const token = localStorage.getItem('jwt');
 
  useEffect(() => {
   const fetchData = async () => {
@@ -25,8 +24,10 @@ const Main = () => {
    }
   };
 
-  fetchData();
- }, []);
+  if (token) {
+   fetchData();
+  }
+ }, [token]);
 
  const toggleSaveArticle = async (article) => {
   const {
