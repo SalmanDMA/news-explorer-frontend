@@ -22,8 +22,8 @@ Users can view saved articles categorized by topic. This makes it easy for users
 
 The application is deployed to a server with the following links:
 
-- Front-end: [https://news-explorer.twilightparadox.com/](https://news-explorer.twilightparadox.com/)
-- Back-end API: [https://api.news-explorer.twilightparadox.com/](https://api.news-explorer.twilightparadox.com/)
+- Front-end: [https://news-exproler.twilightparadox.com](https://news-explorer.twilightparadox.com/)
+- Back-end API: [https://api.news-explorer.twilightparadox.com](https://api.news-explorer.twilightparadox.com/)
 
 ## How to Use the App
 
