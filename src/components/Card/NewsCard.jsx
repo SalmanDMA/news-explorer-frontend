@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Icon from '../Icon';
+import { useUserContext } from '../../context/DataUserContext';
 
 const NewsCard = ({ image, date, title, description, author, userLoggedIn, isSaved, toggleSave }) => {
  const [tooltipText, setTooltipText] = useState('');
-
+ const { popupOpen, setPopupOpen } = useUserContext();
 
  const handleSaveClick = () => {
   if (!userLoggedIn) {
@@ -11,6 +12,7 @@ const NewsCard = ({ image, date, title, description, author, userLoggedIn, isSav
    setTimeout(() => {
     setTooltipText('');
    }, 2000);
+   setPopupOpen(!popupOpen);
   } else {
    toggleSave();
    if (isSaved) {

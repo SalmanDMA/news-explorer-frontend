@@ -8,10 +8,10 @@ import Icon from '../Icon';
 
 const Navigation = ({ classLink, classButton, classButtonName }) => {
  const { home, savedNews } = linkData;
- const [auth, authSet] = useState(false);
  const location = useLocation();
  const { userData, updateUserProfile } = useUserContext();
  const token = localStorage.getItem('jwt');
+ const { popupOpen, setPopupOpen } = useUserContext();
  const { loggedIn, setLoggedIn } = useUserContext();
  const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ const Navigation = ({ classLink, classButton, classButtonName }) => {
    navigate(home);
    return;
   }
-  authSet(!auth);
+  setPopupOpen(!popupOpen);
  };
 
  return (
@@ -67,7 +67,7 @@ const Navigation = ({ classLink, classButton, classButtonName }) => {
      'Masuk'
     )}
    </button>
-   {auth && <PopupSignin handleAuth={handleAuth} title='Masuk' />}
+   {popupOpen && <PopupSignin handleAuth={handleAuth} title='Masuk' />}
   </>
  );
 };
